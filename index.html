@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Advanced To-Do List</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>To-Do List</h1>
+      <label class="switch">
+        <input type="checkbox" id="darkModeToggle">
+        <span class="slider"></span>
+      </label>
+    </header>
+
+    <div class="input-group">
+      <input type="text" id="taskInput" placeholder="Add a new task..." />
+      <input type="date" id="dueDateInput" />
+      <button onclick="addTask()">Add</button>
+    </div>
+
+    <div class="filter-group">
+      <input type="text" id="searchInput" placeholder="Search tasks..." onkeyup="filterTasks()" />
+      <select id="filterStatus" onchange="filterTasks()">
+        <option value="all">All</option>
+        <option value="active">Active</option>
+        <option value="completed">Completed</option>
+      </select>
+    </div>
+
+    <ul id="taskList"></ul>
+
+    <div class="progress-container">
+      <progress id="progressBar" value="0" max="100"></progress>
+      <span id="progressText">0% Completed</span>
+    </div>
+
+    <div id="toast" class="toast"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
